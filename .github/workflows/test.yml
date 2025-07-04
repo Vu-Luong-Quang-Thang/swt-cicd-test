@@ -28,6 +28,25 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
       
+    - name: Install simple-web dependencies
+      run: cd simple-web && npm install
+      
+    - name: Start web server
+      run: cd simple-web && npm start &
+      
+    - name: Wait for server to be ready
+      run: |
+        timeout=30
+        while ! curl -s http://localhost:3000 > /dev/null; do
+          if [ $timeout -le 0 ]; then
+            echo "Server failed to start within 30 seconds"
+            exit 1
+          fi
+          sleep 1
+          timeout=$((timeout - 1))
+        done
+        echo "Server is ready"
+      
     - name: Run tests
       run: npx codeceptjs run --steps
       
