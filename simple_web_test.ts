@@ -1,5 +1,6 @@
 Feature('Simple Web');
 
+// Test cases for Simple Web application - Updated for CI/CD trigger
 Scenario('Trang chủ hiển thị đúng tiêu đề và nút', ({ I }) => {
   I.amOnPage('http://localhost:3000');
   I.see('Welcome to CI/CD Test Page'); //this will pass
@@ -23,4 +24,4 @@ Scenario('Đăng nhập thất bại', ({ I }) => {
   I.click('button[type="submit"]');
   I.waitForText('Login failed!', 3, '#login-result');
   I.see('Login failed!', '#login-result');
-}); 
+});
