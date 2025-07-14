@@ -2,7 +2,7 @@ name: CodeceptJS Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, feature/simple-web ]
   pull_request:
     branches: [ main ]
 
