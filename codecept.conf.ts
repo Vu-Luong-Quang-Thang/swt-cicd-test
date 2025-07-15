@@ -13,7 +13,8 @@ export const config: CodeceptJS.MainConfig = {
     Playwright: {
       browser: 'chromium',
       url: 'http://localhost',
-      show: false
+      show: true,
+      windowSize: '1200x900',
     }
   },
   include: {
