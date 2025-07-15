@@ -1,6 +1,7 @@
 Feature('Simple Web');
 
 // Test cases for Simple Web application - Updated for CI/CD trigger
+// Added new comment to demonstrate CI/CD workflow
 Scenario('Trang chủ hiển thị đúng tiêu đề và nút', ({ I }) => {
   I.amOnPage('http://localhost:3000');
   I.see('Welcome to CI/CD Test Page'); //this will pass
@@ -9,6 +10,7 @@ Scenario('Trang chủ hiển thị đúng tiêu đề và nút', ({ I }) => {
 });
 
 Scenario('Đăng nhập thành công', ({ I }) => {
+  // Test đăng nhập với credentials hợp lệ
   I.amOnPage('http://localhost:3000');
   I.fillField('input[name="username"]', 'admin');
   I.fillField('input[name="password"]', '123');
